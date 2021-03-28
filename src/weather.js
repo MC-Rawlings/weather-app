@@ -1,19 +1,11 @@
-const weatherInfo = (
-  location,
-  temp,
-  feelsLike,
-  participation,
-  wind,
-  windDirection,
-) => {
+const weatherInfo = (location, temp, feelsLike, windSpeed, windDirection) => {
   const toggleTemp = () => temp * (9 / 5) + 32;
 
   return {
     location,
     temp,
     feelsLike,
-    participation,
-    wind,
+    windSpeed,
     windDirection,
     toggleTemp,
   };
@@ -25,12 +17,16 @@ const getWeather = (location) => {
   fetch(url, { mode: 'cors' })
     .then((response) => response.json())
     .then((response) => {
-      console.log(response);
-      // return weatherInfo here
+      console.log(location);
+      console.log(response.main.temp);
+      console.log(response.main.feels_like);
+      console.log(response.wind.speed);
+      console.log(response.wind.deg);
+      // create weatherInfo here
     })
     .catch((error) => {
-      console.error(error);
       // figure out why error handling isn't working
+      alert('Location not found: ' + location);
     });
 };
 
