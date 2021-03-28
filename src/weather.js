@@ -23,6 +23,13 @@ const getWeather = (location) => {
       console.log(response.wind.speed);
       console.log(response.wind.deg);
       // create weatherInfo here
+      return weatherInfo(
+        location,
+        response.main.temp,
+        response.main.feels_like,
+        response.wind.speed,
+        response.wind.deg,
+      );
     })
     .catch((error) => {
       // figure out why error handling isn't working
