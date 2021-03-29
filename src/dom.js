@@ -1,10 +1,19 @@
 import getWeather from './weather';
 
+/**
+ *
+ * @param {string} location - location searched by user
+ * @returns {void} - renders weather to DOM
+ */
 const renderWeather = (location) => {
+  // Target weather-info DOM elements
+  const weatherName = document.querySelector('.weather-name');
+  const weatherTemp = document.querySelector('.weather-temp');
+  // Grab relevant weather data
   const name = location.name;
   const temp = location.main.temp;
-  console.log(temp);
-  console.log(name);
+  weatherName.textContent = name;
+  weatherTemp.textContent = temp;
 };
 
 // Event Listeners
