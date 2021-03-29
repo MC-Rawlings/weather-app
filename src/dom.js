@@ -2,7 +2,7 @@ import getWeather from './weather';
 
 /**
  *
- * @param {string} location - location searched by user
+ * @param {object} location - location searched by user
  * @returns {void} - renders weather to DOM
  */
 const renderWeather = (location) => {
