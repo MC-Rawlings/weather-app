@@ -10,10 +10,10 @@ const renderWeather = (location) => {
   const weatherName = document.querySelector('.weather-name');
   const weatherTemp = document.querySelector('.weather-temp');
   // Grab relevant weather data
-  const name = location.name;
-  const temp = location.main.temp;
+  const { name } = location;
+  const { temp } = location.main;
   weatherName.textContent = name;
-  weatherTemp.textContent = temp;
+  weatherTemp.textContent = `${temp} C`;
 };
 
 // Event Listeners
