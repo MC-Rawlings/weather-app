@@ -1,4 +1,3 @@
-import getWeather from './weather';
+import getTemp from './weather';
 
-getWeather('cape town');
-getWeather('london');
+getTemp('cape town');

@@ -1,41 +1,15 @@
-const weatherInfo = (location, temp, feelsLike, windSpeed, windDirection) => {
-  // change temp from metric to imperial (C to F)
-  const toggleTemp = () => temp * (9 / 5) + 32;
-
-  return {
-    location,
-    temp,
-    feelsLike,
-    windSpeed,
-    windDirection,
-    toggleTemp,
-  };
-};
-
-const getWeather = (location) => {
+const getTemp = (location) => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab`;
 
   fetch(url, { mode: 'cors' })
     .then((response) => response.json())
     .then((response) => {
-      // create weatherInfo here
-      const weatherObject = weatherInfo(
-        location,
-        response.main.temp,
-        response.main.feels_like,
-        response.wind.speed,
-        response.wind.deg,
-      );
-      console.log(weatherObject.location);
-      console.log(weatherObject.temp);
-      console.log(weatherObject.feelsLike);
-      console.log(weatherObject.windSpeed);
-      console.log(weatherObject.windDirection);
+      console.log(response.main.temp);
     })
     .catch((error) => {
       // figure out why error handling isn't working
-      // alert('Location not found: ' + location);
+      console.log(`Location not found: ${error}`);
     });
 };
 
-export default getWeather;
+export default getTemp;
