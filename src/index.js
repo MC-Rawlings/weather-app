@@ -1,3 +1,3 @@
-import getTemp from './weather';
+import getWeather from './weather';
 
-getTemp('cape town');
+getWeather('cape town');

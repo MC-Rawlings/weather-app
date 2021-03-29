@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/dom.js":
+/*!********************!*\
+  !*** ./src/dom.js ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./weather */ \"./src/weather.js\");\n\n\nconst renderWeather = (location) => {\n  const name = location.name;\n  const temp = location.main.temp;\n  console.log(temp);\n  console.log(name);\n};\n\n// Event Listeners\nconst form = document.querySelector('.search-form');\n\ndocument.querySelector('#search').addEventListener('click', () => {\n  const location = form.elements[0].value;\n  (0,_weather__WEBPACK_IMPORTED_MODULE_0__.default)(location);\n  // Code here\n  form.reset();\n});\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderWeather);\n\n\n//# sourceURL=webpack://weather-app/./src/dom.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wea
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getTemp = (location) => {\n  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab`;\n\n  fetch(url, { mode: 'cors' })\n    .then((response) => response.json())\n    .then((response) => {\n      console.log(response.main.temp);\n    })\n    .catch((error) => {\n      // figure out why error handling isn't working\n      console.log(`Location not found: ${error}`);\n    });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getTemp);\n\n\n//# sourceURL=webpack://weather-app/./src/weather.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n\n\nconst getWeather = (location) => {\n  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab`;\n\n  fetch(url, { mode: 'cors' })\n    .then((response) => response.json())\n    .then((response) => {\n      console.log(response.main.temp);\n      (0,_dom__WEBPACK_IMPORTED_MODULE_0__.default)(response);\n    })\n    .catch((error) => {\n      console.log(`Location not found: ${error}`);\n    });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getWeather);\n\n\n//# sourceURL=webpack://weather-app/./src/weather.js?");
 
 /***/ })
 
