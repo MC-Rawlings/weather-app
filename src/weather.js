@@ -1,4 +1,5 @@
 const weatherInfo = (location, temp, feelsLike, windSpeed, windDirection) => {
+  // change temp from metric to imperial (C to F)
   const toggleTemp = () => temp * (9 / 5) + 32;
 
   return {
@@ -17,23 +18,23 @@ const getWeather = (location) => {
   fetch(url, { mode: 'cors' })
     .then((response) => response.json())
     .then((response) => {
-      console.log(location);
-      console.log(response.main.temp);
-      console.log(response.main.feels_like);
-      console.log(response.wind.speed);
-      console.log(response.wind.deg);
       // create weatherInfo here
-      return weatherInfo(
+      const weatherObject = weatherInfo(
         location,
         response.main.temp,
         response.main.feels_like,
         response.wind.speed,
         response.wind.deg,
       );
+      console.log(weatherObject.location);
+      console.log(weatherObject.temp);
+      console.log(weatherObject.feelsLike);
+      console.log(weatherObject.windSpeed);
+      console.log(weatherObject.windDirection);
     })
     .catch((error) => {
       // figure out why error handling isn't working
-      alert('Location not found: ' + location);
+      // alert('Location not found: ' + location);
     });
 };
 
