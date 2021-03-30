@@ -1,3 +1,1 @@
-import getWeather from './weather';
-
-getWeather('cape town');
+import {} from './dom';
