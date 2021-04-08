@@ -1,4 +1,4 @@
-import { getWeatherTemp, getWeatherFeelsLike } from './weather';
+import getWeather from './weather';
 
 const renderWeather = () => {
   const form = document.querySelector('.search-form');
@@ -7,11 +7,9 @@ const renderWeather = () => {
   const weatherFeelsLike = document.querySelector('.weather-feels-like');
 
   const location = form.elements[0].value;
-  getWeatherTemp(location).then((temp) => {
-    weatherTemp.textContent = temp;
-  });
-  getWeatherFeelsLike(location).then((temp) => {
-    weatherFeelsLike.textContent = temp;
+  getWeather(location).then((weather) => {
+    weatherTemp.textContent = weather.temp;
+    weatherFeelsLike.textContent = weather.feelsLike;
   });
 };
 
