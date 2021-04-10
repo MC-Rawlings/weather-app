@@ -1,3 +1,4 @@
+import { doFetch } from './utils/utils';
 import {
   getWeatherTemp,
   getWeatherFeelsLike,
@@ -44,5 +45,22 @@ const eventHandlers = (() => {
 
   searchBtn.addEventListener('click', renderWeather);
 })();
+
+const handleFetch = async () => {
+  console.log('Handling fetch');
+  //
+  const weatherData = await doFetch(
+    'https://aapi.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab',
+  );
+  const icons = await doFetch(
+    'https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab',
+  );
+
+  const consolidatedWeatherData = { ...weatherData, ...icons };
+  console.log(weatherData);
+  console.log(consolidatedWeatherData);
+};
+
+handleFetch();
 
 export default eventHandlers;
