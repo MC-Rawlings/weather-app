@@ -13,4 +13,29 @@ const getWeather = async () => {
   return weather;
 };
 
-export default getWeather;
+const processedWeather = async () => {
+  const weather = await getWeather();
+  const {
+    temp,
+    feels_like: feelsLike,
+    temp_min: tempMin,
+    tem_max: tempMax,
+  } = weather.main;
+  const { main: description, icon } = weather.weather[0];
+  const { speed, deg } = weather.wind;
+  const { name } = weather;
+
+  return {
+    temp,
+    feelsLike,
+    tempMin,
+    tempMax,
+    description,
+    icon,
+    speed,
+    deg,
+    name,
+  };
+};
+
+export default processedWeather;
