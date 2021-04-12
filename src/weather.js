@@ -6,7 +6,7 @@ const fetchWeather = (url) =>
 
 const getWeather = async () => {
   const json = await fetchWeather(
-    'https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab',
+    'https://api.openweathermap.org/data/2.5/weather?q=italy&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab',
   );
 
   const weather = { ...json };
@@ -26,6 +26,7 @@ const processedWeather = async () => {
   const { name } = weather;
 
   return {
+    name,
     temp,
     feelsLike,
     tempMin,
@@ -34,7 +35,6 @@ const processedWeather = async () => {
     icon,
     speed,
     deg,
-    name,
     // dt,
     // sunrise,
     // sunset,

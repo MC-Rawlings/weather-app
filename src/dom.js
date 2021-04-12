@@ -4,6 +4,7 @@ const renderWeather = async () => {
   const weather = await processedWeather();
   const name = document.querySelector('.location');
   const temp = document.querySelector('.left-content__temp');
+  const weatherMeasurement = document.querySelector('.weather-measurement');
   const feelsLike = document.querySelector('.feels-like__temp');
   // const tempMin = document.querySelector('.weather-temp-min');
   // const tempMax = document.querySelector('.weather-temp-max');
@@ -20,9 +21,10 @@ const renderWeather = async () => {
   //   weather.description,
   //   weather.icon,
   // );
-
+  console.log(weatherMeasurement);
   name.textContent = weather.name;
-  temp.textContent = weather.temp;
+  temp.textContent = `${weather.temp}`;
+  weatherMeasurement.textContent = 'C\u00B0';
   feelsLike.textContent = weather.feelsLike;
   // tempMin.textContent = weather.tempMin;
   // tempMax.textContent = weather.tempMax;
@@ -30,7 +32,6 @@ const renderWeather = async () => {
   // windSpeed.textContent = weather.speed;
   // windDirection.textContent = weather.deg;
   weatherIcon.src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`;
-  console.log(weatherIcon);
 };
 
 export default renderWeather;

@@ -6,6 +6,7 @@
 
 :root {
   font-size: 62.5%;
+  --font-main: #5e5d5d;
 }
 
 body {
@@ -48,18 +49,53 @@ body {
   cursor: pointer;
 }
 
-#search:hover {
-}
-
 .search-icon {
   /* position: relative;
   top: 0.2rem; */
   padding: 1rem;
 }
 
+.location {
+  font-size: 7.5rem;
+  color: white;
+}
 
+.content {
+  display: flex;
+  width: 85vw;
+  max-width: 50em;
+  height: 30em;
+  max-height: 60vh;
+  padding: 2rem;
+  background: white;
+  border-radius: 2.5rem;
+  color: var(--font-main);
+}
+
+.left-content__temp {
+  font-size: 5.6rem;
+  font-weight: 400;
+}
+
+.left-content__icon {
+  width: 7.5em;
+}
+
+.temperature {
+  display: flex;
+  align-items: center;
+}
+
+.weather-measurement {
+  position: relative;
+  bottom: 1rem;
+}
 
 /* Shadows */
 .box-shadow {
   box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 25%);
+}
+
+.text-shadow {
+  text-shadow: 0.25rem 0.25rem 1.5rem rgba(0, 0, 0, 75%);
 }
