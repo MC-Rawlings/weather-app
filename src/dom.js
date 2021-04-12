@@ -5,6 +5,9 @@ const renderWeather = async () => {
   const name = document.querySelector('.location');
   const temp = document.querySelector('.left-content__temp');
   const weatherMeasurement = document.querySelector('.weather-measurement');
+  const feelsLikeMeasurement = document.querySelector(
+    '.feels-like__measurement',
+  );
   const feelsLike = document.querySelector('.feels-like__temp');
   // const tempMin = document.querySelector('.weather-temp-min');
   // const tempMax = document.querySelector('.weather-temp-max');
@@ -25,6 +28,7 @@ const renderWeather = async () => {
   name.textContent = weather.name;
   temp.textContent = `${weather.temp}`;
   weatherMeasurement.textContent = 'C\u00B0';
+  feelsLikeMeasurement.textContent = 'C\u00B0';
   feelsLike.textContent = weather.feelsLike;
   // tempMin.textContent = weather.tempMin;
   // tempMax.textContent = weather.tempMax;
