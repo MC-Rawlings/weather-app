@@ -6,7 +6,7 @@ const fetchWeather = (url) =>
 
 const getWeather = async () => {
   const json = await fetchWeather(
-    'https://api.openweathermap.org/data/2.5/weather?q=mexico&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab',
+    'https://api.openweathermap.org/data/2.5/weather?q=italy&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab',
   );
 
   const weather = { ...json };
