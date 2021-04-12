@@ -19,7 +19,7 @@ const processedWeather = async () => {
     temp,
     feels_like: feelsLike,
     temp_min: tempMin,
-    tem_max: tempMax,
+    temp_max: tempMax,
   } = weather.main;
   const { main: description, icon } = weather.weather[0];
   const { speed, deg } = weather.wind;
@@ -35,6 +35,9 @@ const processedWeather = async () => {
     speed,
     deg,
     name,
+    // dt,
+    // sunrise,
+    // sunset,
   };
 };
 

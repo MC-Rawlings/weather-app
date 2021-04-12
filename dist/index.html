@@ -10,7 +10,7 @@
   </head>
   <body>
     <header class="header">
-      <form action="" class="search-form">
+      <form action="" class="search-form box-shadow">
         <label for="location"></label>
         <input
           type="text"
@@ -19,7 +19,11 @@
           placeholder="Enter city name..."
         />
         <button id="search">
-          <img src="assets/images/search.svg" class="search-icon" alt="Search icon" />
+          <img
+            src="assets/images/search.svg"
+            class="search-icon"
+            alt="Search icon"
+          />
         </button>
       </form>
     </header>
@@ -31,7 +35,10 @@
           <h2 class="left-content__temp"></h2>
           <img src="" alt="" class="left-content__icon" />
           <p class="left-content__description"></p>
-          <p class="left-content__feels-like"></p>
+          <div class="feels-like">
+            <p class="feels-like__title">Feels like</p>
+            <p class="feels-like__temp"></p>
+          </div>
         </div>
 
         <div class="right-content">
@@ -73,7 +80,7 @@
 
     <footer class="footer">
       <nav class="socials">
-        <a href="#"
+        <a href="https://github.com/MC-Rawlings/weather-app" target="_blank"
           ><img
             src="../dist/assets/images/GH-logo.svg"
             alt="github link"
