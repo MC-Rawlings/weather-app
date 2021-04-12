@@ -38,7 +38,7 @@ body {
   height: 5rem;
   overflow: hidden;
   background: white;
-  border-radius: 0.25rem;
+  border-radius: 0.75rem;
 }
 
 #search,
@@ -66,7 +66,7 @@ body {
 .content {
   display: flex;
   width: 85vw;
-  max-width: 50em;
+  max-width: 40em;
   height: 30em;
   max-height: 60vh;
   padding: 1.5rem 2.5em;
@@ -80,7 +80,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 40%;
+  width: 50%;
 }
 
 .temperature {
@@ -102,12 +102,12 @@ body {
 
 .left-content__icon {
   width: 4.5em;
-  background: rgb(223, 223, 223);
-  border-radius: 50%;
+  background: rgba(223, 223, 223, 25%);
+  border-radius: 2rem;
 }
 
 .left-content__description {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-style: italic;
 }
 
@@ -145,5 +145,5 @@ body {
 }
 
 .text-shadow {
-  text-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 50%);
+  text-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 25%);
 }
