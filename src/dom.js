@@ -17,25 +17,18 @@ const renderWeather = async () => {
   // const weatherIcon = document.querySelector('.left-content__icon');
 
   // console.log(weather, name, temp, feelsLike, description, weatherIcon);
-  // console.log(
-  //   weather.name,
-  //   weather.temp,
-  //   weather.feelsLike,
-  //   weather.description,
-  //   weather.icon,
-  // );
-  // console.log(weatherMeasurement);
-  // name.textContent = weather.name;
-  // temp.textContent = `${weather.temp}`;
-  // weatherMeasurement.textContent = 'C\u00B0';
-  // feelsLikeMeasurement.textContent = 'C\u00B0';
-  // feelsLike.textContent = weather.feelsLike;
-  // tempMin.textContent = weather.tempMin;
-  // tempMax.textContent = weather.tempMax;
-  // description.textContent = weather.description;
-  // windSpeed.textContent = weather.speed;
-  // windDirection.textContent = weather.deg;
-  // weatherIcon.src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`;
+  console.log(
+    weather.name,
+    weather.temp,
+    weather.feelsLike,
+    weather.description,
+    weather.icon,
+    weather.speed,
+    weather.deg,
+    weather.dt,
+    weather.sunrise,
+    weather.sunset,
+  );
 };
 
 export default renderWeather;

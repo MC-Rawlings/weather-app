@@ -23,7 +23,8 @@ const processedWeather = async () => {
   } = weather.main;
   const { description, icon } = weather.weather[0];
   const { speed, deg } = weather.wind;
-  const { name } = weather;
+  const { name, dt } = weather;
+  const { sunrise, sunset } = weather.sys;
 
   return {
     name,
@@ -35,9 +36,9 @@ const processedWeather = async () => {
     icon,
     speed,
     deg,
-    // dt,
-    // sunrise,
-    // sunset,
+    dt,
+    sunrise,
+    sunset,
   };
 };
 
