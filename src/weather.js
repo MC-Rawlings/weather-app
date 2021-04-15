@@ -13,6 +13,12 @@ const doFetch = (url) =>
     .then((response) => response.json())
     .then((json) => json);
 
+const convertUnixToUtc = (unixTime, timezone) => {
+  const dateAndTime = new Date((unixTime + timezone) * 1000);
+
+  return dateAndTime;
+};
+
 /**
  * Fetches JSON and converts to an object
  *
@@ -21,10 +27,17 @@ const doFetch = (url) =>
  *
  * @example getWeather('cape town'); // returns CPT's weather details
  */
-const getWeather = async (location = 'italy') => {
+const getWeather = async (location = 'london') => {
   const json = await doFetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab`,
   );
+
+  json.dt = convertUnixToUtc(json.dt, json.timezone);
+  json.sys.sunrise = convertUnixToUtc(json.sys.sunrise, json.timezone);
+  json.sys.sunset = convertUnixToUtc(json.sys.sunset, json.timezone);
+  console.log(json.dt);
+  console.log(json.sys.sunrise);
+  console.log(json.sys.sunset);
 
   const weather = { ...json };
   return weather;
