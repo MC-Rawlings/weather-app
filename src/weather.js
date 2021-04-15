@@ -1,18 +1,54 @@
-const fetchWeather = (url) =>
+/**
+ * Dynamically fetches from an API and converts to JSON format.
+ *
+ * @param {string} url API request
+ * @returns {JSON}} API response
+ *
+ * @example dofetch('https://api.openweathermap.org/data/2.5/weather?q=italy&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab'); // returns weather details in Italy
+ *
+ */
+const doFetch = (url) =>
   // eslint-disable-next-line implicit-arrow-linebreak
   fetch(url, { mode: 'cors' })
     .then((response) => response.json())
     .then((json) => json);
 
-const getWeather = async () => {
-  const json = await fetchWeather(
-    'https://api.openweathermap.org/data/2.5/weather?q=italy&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab',
+/**
+ * Fetches JSON and converts to an object
+ *
+ * @param {string} location location's name
+ * @returns {object} weather details
+ *
+ * @example getWeather('cape town'); // returns CPT's weather details
+ */
+const getWeather = async (location = 'italy') => {
+  const json = await doFetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab`,
   );
 
   const weather = { ...json };
   return weather;
 };
 
+/**
+ * Grabs important weather information & processes it
+ *
+ * @returns {{
+ * name: string,
+ * temp: number,
+ * feelsLike: number,
+ * tempMin: number,
+ * tempMax: number,
+ * description: string,
+ * icon: string,
+ * speed: number,
+ * deg: number,
+ * dt: number,
+ * sunrise: number,
+ * sunset: number
+ * }} weather details (processed)
+ *
+ */
 const processedWeather = async () => {
   const weather = await getWeather();
   const {
