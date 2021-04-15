@@ -32,9 +32,15 @@ const getWeather = async (location = 'london') => {
     `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab`,
   );
 
-  json.dt = convertUnixToUtc(json.dt, json.timezone);
-  json.sys.sunrise = convertUnixToUtc(json.sys.sunrise, json.timezone);
-  json.sys.sunset = convertUnixToUtc(json.sys.sunset, json.timezone);
+  json.dt = convertUnixToUtc(json.dt, json.timezone).toLocaleString();
+  json.sys.sunrise = convertUnixToUtc(
+    json.sys.sunrise,
+    json.timezone,
+  ).toUTCString();
+  json.sys.sunset = convertUnixToUtc(
+    json.sys.sunset,
+    json.timezone,
+  ).toUTCString();
   console.log(json.dt);
   console.log(json.sys.sunrise);
   console.log(json.sys.sunset);
