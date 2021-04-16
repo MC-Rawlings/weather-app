@@ -12,8 +12,6 @@ const renderWeather = async () => {
   // const tempMin = document.querySelector('.weather-temp-min');
   // const tempMax = document.querySelector('.weather-temp-max');
   // const description = document.querySelector('.left-content__description');
-  // const windSpeed = document.querySelector('.weather-wind-speed');
-  // const windDirection = document.querySelector('.weather-wind-direction');
   // const weatherIcon = document.querySelector('.left-content__icon');
 
   // console.log(weather, name, temp, feelsLike, description, weatherIcon);
@@ -23,8 +21,6 @@ const renderWeather = async () => {
     weather.feelsLike,
     weather.description,
     weather.icon,
-    weather.speed,
-    weather.deg,
     weather.dt,
     weather.sunrise,
     weather.sunset,

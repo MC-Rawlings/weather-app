@@ -1,3 +1,4 @@
+// Utility functions
 /**
  * Dynamically fetches from an API and converts to JSON format.
  *
@@ -27,7 +28,8 @@ const convertUnixToUtc = (unixTime, timezone) => {
  *
  * @example getWeather('cape town'); // returns CPT's weather details
  */
-const getWeather = async (location = 'new york') => {
+
+const getWeather = async (location = 'cape town') => {
   const json = await doFetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab`,
   );
@@ -51,8 +53,6 @@ const getWeather = async (location = 'new york') => {
  * tempMax: number,
  * description: string,
  * icon: string,
- * speed: number,
- * deg: number,
  * dt: number,
  * sunrise: number,
  * sunset: number
@@ -68,7 +68,6 @@ const processedWeather = async () => {
     temp_max: tempMax,
   } = weather.main;
   const { description, icon } = weather.weather[0];
-  const { speed, deg } = weather.wind;
   const { name, dt } = weather;
   const { sunrise, sunset } = weather.sys;
 
@@ -80,8 +79,6 @@ const processedWeather = async () => {
     tempMax,
     description,
     icon,
-    speed,
-    deg,
     dt,
     sunrise,
     sunset,
