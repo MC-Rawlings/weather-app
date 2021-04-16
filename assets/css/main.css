@@ -6,4 +6,12 @@
 
 :root {
   font-size: 62.5%;
+  --clr-primary: hsl(195, 100%, 39%);
+  --clr-secondary: hsl(239, 94%, 19%);
+  --clr-light: hsl(195, 60%, 90%);
+  --clr-dark: hsl(239, 100%, 5%);
+}
+
+body {
+  
 }
