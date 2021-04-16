@@ -1,4 +1,31 @@
 // Utility functions
+
+/**
+ * Converts celsius to farhenheith
+ *
+ * @param {number} temp temperature in celsius
+ * @returns {number} temperature in farhenheit
+ *
+ * @example convertCtoF(12); // expected 53.6F
+ */
+const convertCtoF = (temp) => {
+  const fahrenheit = (temp * (9 / 5)) / 5 + 32;
+  return fahrenheit;
+};
+
+/**
+ * Converts farhenheith to celsius
+ *
+ * @param {number} temp temperature in farhenheit
+ * @returns {number} temperature in celsius
+ *
+ * @example convertftoC(35); // expected 1.67C
+ */
+const convertFtoC = (temp) => {
+  const celsiuis = (temp - 32) * (9 / 5);
+  return celsiuis;
+};
+
 /**
  * Dynamically fetches from an API and converts to JSON format.
  *
@@ -86,3 +113,4 @@ const processedWeather = async () => {
 };
 
 export default processedWeather;
+export { convertCtoF, convertFtoC };
