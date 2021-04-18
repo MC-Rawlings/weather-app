@@ -6,11 +6,44 @@
 
 :root {
   font-size: 62.5%;
-  --clr-primary: hsl(206, 35%, 87%);
-  --clr-secondary: hsl(0, 5%, 96%);
-  --clr-accent: hsl(193, 77%, 37%);
+  --clr-primary: hsl(169, 6%, 66%);
+  --clr-secondary: hsl(192, 18%, 48%);
+  --clr-accent: hsl(7, 65%, 72%);
+  --text-light: hsl(0, 0%, 95%);
 }
 
 body {
+  min-height: 100vh;
+  background: var(--clr-primary);
+  color: var(--text-light);
+}
 
+button {
+  border: none;
+  background: var(--clr-accent);
+}
+input {
+  border: none;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.5em;
+  height: 6.5em;
+  background: var(--clr-secondary);
+}
+
+.search-form {
+  display: flex;
+  height: 75%;
+}
+
+.search-form__btn, .search-form__input {
+  height: 100%;
+}
+
+.search-form__btn img {
+  height: 100%;
 }
