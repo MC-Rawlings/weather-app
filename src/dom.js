@@ -12,7 +12,8 @@ const renderWeather = async () => {
   // const tempMin = document.querySelector('.weather-temp-min');
   // const tempMax = document.querySelector('.weather-temp-max');
   // const description = document.querySelector('.left-content__description');
-  // const weatherIcon = document.querySelector('.left-content__icon');
+  const weatherIcon = document.querySelector('.weather-main__icon');
+  weatherIcon.src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`;
 
   // console.log(weather, name, temp, feelsLike, description, weatherIcon);
   console.log(
