@@ -16,6 +16,7 @@ body {
   min-height: 100vh;
   background: var(--clr-primary);
   color: var(--text-light);
+  font-family: 'Nato Sans JP', sans-serif;
 }
 
 button {
@@ -40,7 +41,8 @@ input {
   height: 75%;
 }
 
-.search-form__btn, .search-form__input {
+.search-form__btn,
+.search-form__input {
   height: 100%;
 }
 
