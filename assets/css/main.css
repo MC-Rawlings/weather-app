@@ -13,6 +13,7 @@
 }
 
 body {
+  font-size: 1.6rem;
   min-height: 100vh;
   background: var(--clr-primary);
   color: var(--text-light);
@@ -41,11 +42,19 @@ input {
   height: 75%;
 }
 
-.search-form__btn,
+.search-form__btn img,
 .search-form__input {
   height: 100%;
 }
 
-.search-form__btn img {
-  height: 100%;
+.search-form__btn {
+  border-radius: 0 0.25em 0.25em 0;
+}
+
+.search-form__input {
+  border-radius: 0.25em 0 0 0.25em;
+}
+
+.bs-btn {
+  box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.25);
 }
