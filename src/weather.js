@@ -41,10 +41,10 @@ const doFetch = (url) =>
     .then((response) => response.json())
     .then((json) => json);
 
-const convertUnixToUtc = (unixTime, timezone) => {
-  const dateAndTime = new Date((unixTime + timezone) * 1000);
+const convertUnixToUtc = (unixTime) => {
+  const dateAndTime = new Date(unixTime * 1000);
 
-  return dateAndTime.toUTCString();
+  return dateAndTime.toLocaleTimeString();
 };
 
 /**
