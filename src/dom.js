@@ -1,8 +1,8 @@
 import processedWeather from './weather';
 
-const renderWeather = async () => {
-  const weather = await processedWeather();
-  const name = document.querySelector('.weather-main__temp');
+const renderWeather = async (location = 'cape town') => {
+  const weather = await processedWeather(location);
+  const name = document.querySelector('.location__name');
   const temp = document.querySelector('.weather-main__temp');
   const feelsLike = document.querySelector('.weather-feels-like__value');
   const description = document.querySelector('.weather-description__value');
@@ -11,6 +11,8 @@ const renderWeather = async () => {
   const weatherIcon = document.querySelector('.weather-main__icon');
   const sunRise = document.querySelector('.weather-sunrise__value');
   const sunSet = document.querySelector('.weather-sunset__value');
+
+  console.log(weather.name);
 
   name.textContent = `${weather.name}`;
   weatherIcon.src = `http://openweathermap.org/img/wn/${weather.icon}@2x.png`;
@@ -23,4 +25,17 @@ const renderWeather = async () => {
   sunSet.textContent = `${weather.sunset}`;
 };
 
-export default renderWeather;
+
+
+const eventListeners = (() => {
+  const searchBtn = document.querySelector('.search-form__btn');
+
+  renderWeather();
+
+  searchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    renderWeather(e.returnValue);
+  });
+})();
+
+export default eventListeners;

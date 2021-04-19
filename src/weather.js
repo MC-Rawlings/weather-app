@@ -56,7 +56,7 @@ const convertUnixToUtc = (unixTime) => {
  * @example getWeather('cape town'); // returns CPT's weather details
  */
 
-const getWeather = async (location = 'cape town') => {
+export const getWeather = async (location) => {
   const json = await doFetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=490f24bcbc3a2ee5cb3e70d10b15bfab`,
   );
@@ -86,8 +86,8 @@ const getWeather = async (location = 'cape town') => {
  * }} weather details (processed)
  *
  */
-const processedWeather = async () => {
-  const weather = await getWeather();
+const processedWeather = async (location) => {
+  const weather = await getWeather(location);
   const {
     temp,
     feels_like: feelsLike,

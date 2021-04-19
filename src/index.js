@@ -1,3 +1,1 @@
-import renderWeather from './dom';
-
-renderWeather();
+import {} from './dom';
