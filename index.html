@@ -15,6 +15,11 @@
   </head>
   <body>
     <header class="header">
+      <nav class="socials">
+        <a href="">
+          <img src="assets/images/GH-logo.svg" alt="" class="socials__GH" />
+        </a>
+      </nav>
       <form class="search-form bs-btn">
         <label for="" class="search-form__label"></label>
         <input
@@ -28,38 +33,42 @@
       </form>
     </header>
     <main class="main">
-      <h1 class="location text-shadow">Cape Town</h1>
+      <div class="location">
+        <img src="./assets/images/location.svg" alt="" class="location__icon">
+        <h1 class="location__name text-shadow">Cape Town</h1>
+      </div>
+
       <div class="weather-main">
         <img src="" alt="" class="weather-main__icon" />
         <h2 class="weather-main__temp text-shadow">23</h2>
       </div>
 
       <div class="weather">
-        <div class="weather-temp">
+        <div class="weather-temp flex">
           <p class="weather-temp__title">min temp:</p>
           <span class="weather-temp__value">15</span>
         </div>
-        <div class="weather-feels-like">
+        <div class="weather-feels-like flex">
           <p class="weather-feels-like__title">min temp:</p>
           <span class="weather-feels-like__value">15</span>
         </div>
-        <div class="weather-min">
+        <div class="weather-min flex">
           <p class="weather-min__title">min temp:</p>
           <span class="weather-min">15</span>
         </div>
-        <div class="weather-max">
+        <div class="weather-max flex">
           <p class="weather-max__title">min temp:</p>
           <span class="weather-max__value">15</span>
         </div>
-        <div class="weather-description">
+        <div class="weather-description flex">
           <p class="weather-description__title">min temp:</p>
           <span class="weather-description__value">15</span>
         </div>
-        <div class="weather-sunrise">
+        <div class="weather-sunrise flex">
           <p class="weather-sunrise__title">min temp:</p>
           <span class="weather-sunrise__value">15</span>
         </div>
-        <div class="weather-sunset">
+        <div class="weather-sunset flex">
           <p class="weather-sunset__title">min temp:</p>
           <span class="weather-sunset__value">15</span>
         </div>
@@ -67,11 +76,7 @@
     </main>
 
     <footer class="footer">
-      <nav class="socials">
-        <a href="">
-          <img src="assets/images/GH-logo.svg" alt="" class="socials__GH" />
-        </a>
-      </nav>
+
     </footer>
 
     <script src="main.js"></script>
