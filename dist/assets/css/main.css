@@ -15,8 +15,8 @@
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  font-size: 1.6rem;
+  align-items: space-between;
+  font-size: 1.75rem;
   min-height: 100vh;
   background: var(--clr-primary);
   color: var(--text-light);
@@ -24,6 +24,7 @@ body {
 }
 
 main {
+  margin: 0 auto;
   padding: 1.5em;
   max-width: 50rem;
 }
@@ -47,7 +48,8 @@ input {
 }
 
 .socials__GH {
-  width: 4.25rem;
+  width: 4.5rem;
+  margin-top: 0.25rem;
 }
 
 .search-form {
@@ -70,11 +72,12 @@ input {
 
 .location {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .location__icon {
   width: 2em;
+  margin-right: 0.5em;
 }
 
 .location__name {
@@ -85,13 +88,13 @@ input {
 
 .weather-main {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 10em;
 }
 
 .weather-main__temp {
-  font-size: 12rem;
+  font-size: 10rem;
   font-weight: normal;
 }
 
@@ -107,4 +110,9 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.extra-value {
+  font-size: 1.2em;
+  font-weight: bold;
 }
