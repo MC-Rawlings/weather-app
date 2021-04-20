@@ -4,85 +4,75 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <title>Weather App</title>
   </head>
   <body>
     <header class="header">
-      <form action="" class="search-form">
-        <label for="location"></label>
+      <nav class="socials">
+        <a href="https://github.com/MC-Rawlings/weather-app" target="_blank">
+          <img src="assets/images/GH-logo.svg" alt="" class="socials__GH bs-btn" />
+        </a>
+      </nav>
+      <form class="search-form bs-btn">
+        <label for="" class="search-form__label"></label>
         <input
           type="text"
-          id="location"
-          name="location"
-          placeholder="Enter city name here"
+          class="search-form__input"
+          placeholder="Enter location here..."
         />
-        <div id="search">Search</div>
+        <button class="search-form__btn">
+          <img src="assets/images/search-white.svg" alt="" />
+        </button>
       </form>
     </header>
-
     <main class="main">
-      <h1 class="location"></h1>
-      <div class="content">
-        <div class="left-content">
-          <h2 class="left-content__temp"></h2>
-          <img src="" alt="" class="left-content__icon" />
-          <p class="left-content__description"></p>
-          <p class="left-content__feels-like"></p>
-        </div>
+      <div class="location">
+        <img src="./assets/images/location.svg" alt="" class="location__icon">
+        <h1 class="location__name text-shadow"></h1>
+      </div>
 
-        <div class="right-content">
-          <div class="right-content__data">
-            <h4 class="right-content__data-type"></h4>
-            <p class="right-content__data-value"></p>
-          </div>
-          <div class="right-content__data">
-            <h4 class="right-content__data-type"></h4>
-            <p class="right-content__data-value"></p>
-          </div>
-          <div class="right-content__data">
-            <h4 class="right-content__data-type"></h4>
-            <p class="right-content__data-value"></p>
-          </div>
-          <div class="right-content__data">
-            <h4 class="right-content__data-type"></h4>
-            <p class="right-content__data-value"></p>
-          </div>
-          <div class="right-content__data">
-            <h4 class="right-content__data-type"></h4>
-            <p class="right-content__data-value"></p>
-          </div>
-          <div class="right-content__data">
-            <h4 class="right-content__data-type"></h4>
-            <p class="right-content__data-value"></p>
-          </div>
-          <div class="right-content__data">
-            <h4 class="right-content__data-type"></h4>
-            <p class="right-content__data-value"></p>
-          </div>
-          <div class="right-content__data">
-            <h4 class="right-content__data-type"></h4>
-            <p class="right-content__data-value"></p>
-          </div>
+      <div class="weather-main">
+        <img src="" alt="" class="weather-main__icon" />
+        <h2 class="weather-main__temp text-shadow"></h2>
+      </div>
+
+        <div class="weather-feels-like flex">
+          <p class="weather-feels-like__title">Feels Like</p>
+          <span class="weather-feels-like__value extra-value"></span>
+        </div>
+        <div class="weather-description flex">
+          <p class="weather-description__title">Description</p>
+          <span class="weather-description__value"></span>
+        </div>
+        <div class="weather-min flex">
+          <p class="weather-min__title">Min</p>
+          <span class="weather-min__value extra-value"></span>
+        </div>
+        <div class="weather-max flex">
+          <p class="weather-max__title">Max</p>
+          <span class="weather-max__value extra-value"></span>
+        </div>
+        <div class="weather-sunrise flex">
+          <p class="weather-sunrise__title">Sunrise</p>
+          <span class="weather-sunrise__value extra-value"></span>
+        </div>
+        <div class="weather-sunset flex">
+          <p class="weather-sunset__title">Sunset</p>
+          <span class="weather-sunset__value extra-value"></span>
         </div>
       </div>
     </main>
 
     <footer class="footer">
-      <nav class="socials">
-        <a href="#"><img src="" alt="github link" class="social__github" /></a>
-      </nav>
-    </footer>
 
-    <div id="content">
-      <p class="weather-temp"></p>
-      <p class="weather-feels-like"></p>
-      <p class="weather-temp-min"></p>
-      <p class="weather-temp-max"></p>
-      <p class="weather-description"></p>
-      <img src="" alt="" class="weather-icon">
-    </div>
+    </footer>
 
     <script src="main.js"></script>
   </body>
