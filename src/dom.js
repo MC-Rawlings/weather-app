@@ -25,17 +25,17 @@ const renderWeather = async (location = 'cape town') => {
   sunSet.textContent = `${weather.sunset}`;
 };
 
-
-
-const eventListeners = (() => {
+const eventListeners = () => {
   const searchBtn = document.querySelector('.search-form__btn');
 
   renderWeather();
 
   searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    renderWeather(e.returnValue);
+    const form = document.querySelector('.search-form');
+    renderWeather(form.elements[0].value);
+    form.reset();
   });
-})();
+};
 
 export default eventListeners;

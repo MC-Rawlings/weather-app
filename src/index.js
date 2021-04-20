@@ -1,1 +1,3 @@
-import {} from './dom';
+import eventListeners from './dom';
+
+eventListeners();
